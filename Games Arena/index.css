@@ -5,10 +5,10 @@ body {
 }
 
 #mainContainer {
+    margin-top: 30px;
     display: grid;
-    grid-gap: 3em;
-    grid-template-rows: auto auto 1fr;
-    
+    grid-template-rows: 80px auto 1fr;
+    grid-gap: 2em;
 }
 
 #header {
@@ -17,49 +17,37 @@ body {
     flex-direction: row;
 }
 
-input::placeholder { color: rgb(128, 100, 100); font-size: 1.5em; font-style: italic; font-family:'Orbitron, sans-serif'; }
-#header > div {
-    width: 300px;
-    height: 4.2em;
+input::placeholder { color: rgb(128, 100, 100); font-size: 1em; font-style: italic; font-family:'Orbitron, sans-serif'; }
+
+
+#search {
     border: 3px solid rgb(255, 196, 0);
     border-radius: 15px 15px 15px 15px;
-}
-#search {
-    position: absolute;
-    top: 14px;
-    margin-left: 3px;
-    width:200px; 
-    height:4em;
+    width:600px; 
+    padding: 5px;
     text-align: center;
+    font-style: italic;
+    font-size: 1.5em;
+    color: white;
     background: black;
-    border: 1px solid black;
     text-decoration: none;
-    outline: none;
-        
+    outline: none;     
 }
 
-img {
-    position: absolute;
-    top: -4px;
-    width:70px; 
-    margin-left: 220px;
-    height: 6em; 
-    clip: rect(15px 60px 73px 15px);
-    border: 1px solid white;
-
-}
 
 #gameContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2.5em;  
+    grid-row-gap: 1em;  
+    grid-column-gap: 2.5em;
+    height: 700px;
 
 }
 
 #game {
     border: 5px solid rgb(255, 196, 0);
     background: white;
-    height: 225px;
+    height: 210px;
     
 }
 
@@ -94,11 +82,29 @@ button {
     background: red;
 }
 
+@media only screen and  (min-width: 600px) and (max-width: 1000px) {
+    #gameContainer {
+        height: 1200px;
+    }
+    #game {
+       height: 350px;      
+    } 
+     #search {
+    width:400px; 
+    font-size: 1.5em;    
+    }  
+  }
 
 @media only screen and (max-width: 600px) {
     #gameContainer {
         display: grid;
         grid-template-columns: auto;
         grid-gap: 1em;  
+        height: 2200px;
     }   
+
+    #search {
+    width:300px; 
+    font-size: 1.2em;    
+    }
   }

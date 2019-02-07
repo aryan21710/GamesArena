@@ -1,0 +1,270 @@
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 2000px;
+    }
+    #h1Id {
+      background: grey;
+      padding: 30px;
+      text-align: center;
+      margin: 0;
+      display: block;
+      opacity: 0.7;
+    }
+
+    #h1Id h2 {
+      color: red;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background: #39ac73;
+      overflow: hidden;
+      /* KEYWORDS:- when height is not specified, this takes care of the overflowing list-items */
+      max-width: 100%;
+      position: sticky;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      padding: 20px 45px;
+      color: white;
+      text-decoration: none;
+      font: 20px bold;
+      text-align: center;
+    }
+
+    li:first-child a {
+      background: #ff3300;
+    }
+
+    #divId {
+      clear: both;
+      background: #ff3300;
+      border: 1px solid black;
+      max-width: 610px;
+      display: none;
+      margin: 0px;
+      height: 90%;
+      overflow: auto;
+    }
+
+    #DropDown {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background: white;
+      color: black;
+      display: block;
+    }
+
+    #DropDown li {
+      display: block;
+      border: 1px solid black;
+    }
+
+    #DropDown li a {
+      text-align: left;
+      text-decoration: none;
+    }
+
+    a:active,
+    li:nth-child(odd) a:hover {
+      background: #ff3300;
+    }
+
+    li:nth-child(even) a:hover {
+      background: grey;
+    }
+
+    #h1Id h2:hover {
+      color: blue;
+    }
+
+    @media screen and (max-width:500px) {
+      li {
+        float: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="h1Id">
+    <h1> CLICK ON THE NAVBAR LINKS TO SEE THE PARAGRAPH </h1>
+    <h2> REDUCE THE WIDTH OF THE WEBPAGE TO 500PX TO SEE THE NAVBAR CHANGE <h2>
+  </div>
+
+  <ul>
+    <li><a onclick="expand1()" href="#Home">Home</a></li>
+    <li><a onclick="expand2()" href="#News">News</a></li>
+    <li><a onclick="expand1()" href="#Contact">Contact</a></li>
+    <li><a onclick="DrpDwn()" href="#DropDown">DropDown</a></li>
+  </ul>
+
+
+
+
+
+
+
+
+  <div id="divId">
+    <h1>Fixed Top Navigation Bar</h1>
+    <h2>Scroll this page to see the effect</h2>
+    <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+            <p>Some text some text some text some text..</p>
+  </div>
+</body>
+
+<script>
+  function expand1() {
+    document.getElementById("divId").style.display = "block";
+    document.getElementById("divId").style.background = "#ff3300";
+  }
+  function expand2() {
+    document.getElementById("divId").style.background = "grey";
+    document.getElementById("divId").style.display = "block";
+  }
+  function DrpDwn() {
+    document.getElementById("divId").style.background = "grey";
+    document.getElementById("divId").style.display = "block";
+    document.getElementById("DropDown").ul.style.display = "block";
+  }
+</script>
+
+</html>

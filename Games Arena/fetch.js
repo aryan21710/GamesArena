@@ -1,8 +1,9 @@
 
 class GamesConfig {
-    constructor(url,gameList='') {
+    constructor(url, gameList = '', sortBtnStatus=false) {
         this.url=url
         this.gameList=gameList;
+        this.sortBtnStatus = sortBtnStatus;
     }
 
 
@@ -96,24 +97,30 @@ class GamesConfig {
                 }
             })
             console.log('gameFound Details are:-' + JSON.stringify(gameFound));
+            document.querySelector('#gameContainer').style.height = '100%';
+
             return gameFound;
         } else {
           alert('DATA NOT READY YET.. TRY AGAIN');
         }
-
     }
 
 
 
     showFoundGame(gameFound) {
         console.log('INSIDE SHOWFOUNDGAME:-' + gameFound.length);
+        document.getElementById('nextPage').style.display = 'none';
+
         document.querySelector('#gameContainer').innerHTML='';
+
+
         let output='';
         gameFound.forEach((g, ind) => {
             output+= `<div id="game" class="g1"> <p id="title">Title:- ${g['title']}</p> <p id="platform">Platform:- ${g['platform']}</p> <p id="score">Score:- ${g['score']}</p> <p id="genre">Genre:- ${g['genre']}</p> <p id="editorsChoice">Editors_Choice:- ${g['editors_choice']}</p></div >`
         })
         document.querySelector('#gameContainer').innerHTML=output;
-
+        // console.log('height:-'+document.querySelector('#gameContainer').style.height);
+        // document.getElementById('navbar').style.height='8284px';
     }
 
 
@@ -188,6 +195,77 @@ class GamesConfig {
                    </div>`
     }
 
+    sortGameByPlatform(e) {
+        console.log('SEARCH THE GAMES BY PLATFORM'+e.target.value);    
+        let gameFound = this.gameList;
+        if (this.gameList.length == 99) {
+            e.preventDefault();
+            let compare = (a, b) => {
+                let comparison = 0;
+                comparison=a['platform'].toLowerCase() > b['platform'].toLowerCase() ? 1 : -1;
+                return comparison;
+            }
+
+            this.gameList.sort(compare)
+            console.log('this.gameList Details are:-' + JSON.stringify(this.gameList,null,4));
+            let mq = window.matchMedia("(max-width: 600px)");
+            if (mq.matches) {
+                document.querySelector('#gameContainer').style.height = '40%';
+            } else {
+                document.querySelector('#gameContainer').style.height = '100%';
+            }
+            console.log(document.querySelector('#gameContainer').style.height);
+            this.showFoundGame(this.gameList);
+
+        } else {
+            alert('DATA NOT READY YET.. TRY AGAIN');
+        }
+
+    }
+
+
+
+    sortGameByScore(order) {
+        console.log('SEARCH THE GAMES BY SCORE IN ORDER' + order);
+        let gameFound = this.gameList;
+
+        if (this.gameList.length == 99) {
+            // e.preventDefault();
+            let compare = (a, b) => {
+                let comparison = 0;
+                order == 'asc' ? comparison = a['score'] > b['score'] ? 1 : -1 : comparison = b['score'] > a['score'] ? 1 : -1;         
+                return comparison;
+            }
+
+            this.gameList.sort(compare)
+            console.log('this.gameList Details are:-' + JSON.stringify(this.gameList, null, 4));
+            let mq = window.matchMedia("(max-width: 600px)");
+            if (mq.matches) {
+                document.querySelector('#gameContainer').style.height = '40%';
+            } else {
+                document.querySelector('#gameContainer').style.height = '100%';
+            }
+            console.log(document.querySelector('#gameContainer').style.height);
+            this.showFoundGame(this.gameList);
+        } else {
+            alert('DATA NOT READY YET.. TRY AGAIN');
+        }
+
+    }
+
+    expand() {
+        console.log('SHOW SORT FORM:-' + this.sortBtnStatus);
+        if (!this.sortBtnStatus) {
+            document.getElementById('myform').style.display = 'block';
+            document.getElementById('sortDiv').style.border = '2px solid rgb(255, 196, 0)';
+            this.sortBtnStatus=true;
+        } else {
+            document.getElementById('myform').style.display = 'none';
+            document.getElementById('sortDiv').style.border='';
+            this.sortBtnStatus = false;
+        }
+    }
+
 
 
 
@@ -218,16 +296,15 @@ class GamesConfig {
             document.querySelector("#search").addEventListener('input',(e)=>{
                 if (e.target.value.length > 0) {
                     document.getElementById('nextPage').style.display = 'none';
+                    console.log('THIS IS A TITLE SEARCH');
                     let gameFound = this.searchGame(e);
                     this.showFoundGame(gameFound);
+                    
                 } else {
                     this.initialState();
                     document.getElementById('nextPage').style.display='';
                 }
-
-
             })
-        
         }) 
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
     }

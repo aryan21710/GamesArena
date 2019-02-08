@@ -273,9 +273,10 @@ class GamesConfig {
         console.log('inside processBody');
         console.log(`CALLING PROCESSBODY WITH URL:-${this.url}`);
         let pageCount=1;
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = "http://starlord.hackerearth.com/gamesarena"; // site that doesn’t send Access-Control-*
-        fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+        // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url ='http://localhost:5000/gameInfo';
+        // const url = "http://starlord.hackerearth.com/gamesarena"; // site that doesn’t send Access-Control-*
+        fetch(url) // https://cors-anywhere.herokuapp.com/https://example.com
         .then(response => response.text())
         .then(contents => {
             this.gameList=JSON.parse(contents);
@@ -314,7 +315,8 @@ class GamesConfig {
 }
 
 
-const myUrl='http://starlord.hackerearth.com/gamesarena';
+// const myUrl='http://starlord.hackerearth.com/gamesarena';
+const myUrl ='http://localhost:5000/gameInfo';
 const myGameInfo= new GamesConfig(myUrl);
 myGameInfo.processBody();
 

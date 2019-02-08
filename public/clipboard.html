@@ -1,0 +1,186 @@
+body {
+background-color: black;
+box-sizing: border-box;
+font-family: 'Orbitron', sans-serif;
+}
+
+#mainContainer {
+margin-top: 30px;
+display: grid;
+grid-template-rows: 80px auto 1fr;
+grid-gap: 2em;
+}
+
+#header {
+display: flex;
+justify-content: center;
+width: 80%;
+}
+
+input::placeholder { color: rgb(128, 100, 100); font-size: 1em; font-style: italic; font-family:'Orbitron, sans-serif';
+}
+
+#search {
+border: 3px solid rgb(255, 196, 0);
+border-radius: 15px 15px 15px 15px;
+padding: 10px;
+width: 500px;
+text-align: center;
+font-style: italic;
+font-size: 1.5em;
+color: white;
+background: black;
+text-decoration: none;
+outline: none;
+}
+
+#gameNavbarCont {
+display: grid;
+grid-template-columns: 1fr 250px;
+grid-column-gap: 2em;
+overflow: hidden;
+margin-left: 10px;
+}
+
+#navbar {
+display: flex;
+/* border:5px solid rgb(255, 196, 0); */
+position: fixed;
+left: 1100px;
+top: 125px;
+/* border: 1px solid white; */
+}
+
+#myform {
+background: black;
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#gameContainer {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 3em;
+/* height: 700px; */
+}
+
+#game {
+border: 5px solid rgb(255, 196, 0);
+background: white;
+height: 220px;
+}
+
+#game > p {
+padding-left: 2px;
+}
+
+#nextPage {
+display: grid;
+width: 80%;
+grid-template-columns: 2em 2em 2em;
+justify-content: space-around;
+}
+
+
+
+#pageCount,#first,#next {
+background: white;
+color:black;
+text-align: center;
+border: 2px solid rgb(255, 196, 0);
+}
+
+button {
+width: auto;
+height: 2em;
+background: white;
+}
+
+#page1 {
+background: red;
+}
+
+/* ******************************************************************** */
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+#gameNavbarCont {
+display: grid;
+grid-template-rows: auto auto;
+}
+#gameContainer {
+height: 1200px;
+}
+#game {
+height: 350px;
+}
+#search {
+width:400px;
+font-size: 1.5em;
+}
+}
+
+/* ******************************************************************** */
+@media only screen and (max-width: 600px) {
+* {
+box-sizing: border-box;
+}
+
+#mainContainer{
+grid-gap: 1em;
+grid-template-rows: 80px auto 1fr;
+}
+}
+#header {
+width: 100%;
+grid-column-gap: 10px;
+}
+
+#gameNavbarCont {
+border: 1px solid red;
+grid-gap: 1em;
+overflow: hidden;
+}
+
+#navbar {
+position: sticky;
+width: 100%;
+top: 0px;
+left: 0px;
+border: 2px solid rgb(255, 196, 0);
+overflow: hidden;
+grid-row-start: 1;
+grid-row-end: 2;
+grid-column-start: 1;
+grid-column-end: 3;
+}
+
+#myform{
+border: 1px solid white;
+width: 100%;
+}
+
+
+#gameContainer {
+display: grid;
+grid-template-columns: auto;
+grid-gap: 1em;
+height: 30%;
+grid-column-start: 1;
+grid-column-end: 3;
+height: 30%;
+overflow: auto;
+}
+
+#search {
+width:300px;
+font-size: 1.2em;
+}
+
+/* #nextPage {
+position: fixed;
+top: 100px;
+left: 0px;
+} */
+}

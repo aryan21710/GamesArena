@@ -2,7 +2,7 @@ const express=require('express');
 const path=require('path');
 const app=express();
 const fs=require('fs');
-const port=5000;
+const port=process.env.PORT||5000
 
 
 const publicpath=path.join(__dirname, 'public');
@@ -10,7 +10,7 @@ console.log('path is:-' + publicpath);
 
 app.use(express.static(publicpath));
 
-const fileName ='public/gamesData.txt';
+const fileName ='./public/gamesData.txt';
 app.get('/gameInfo',(req,res)=>{
     const d = new Date();
     console.log(`USER LOGGED IN TO GAMEINFO @ ${d.toTimeString()} ${d.toDateString()} `)

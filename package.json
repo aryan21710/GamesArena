@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start" : "node server.js",  
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "aryan sharma",
@@ -18,5 +18,5 @@
     "whatwg-fetch": "^3.0.0"
   },
   "keywords": [],
-  "description": ""
+  "description": "REST API PORTAL TO GET/SORT/SEARCH GAME INFORMATION"
 }
